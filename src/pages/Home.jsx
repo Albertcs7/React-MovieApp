@@ -1,19 +1,18 @@
-import MovieCard from "../components/movieCard";
 import { useState } from "react";
-import "../css/Home.css"
+import MovieCard from "../components/movieCard";
+import "../css/Home.css";
 
 function Home(){
     const [searchQuery,setSearchQuery] = useState("")
 
     const movie =[
-        {id:1, title: "John Wick",release_date:"2024"},
-        {id:2, title: "Avengers",release_date:"2020"},
+        {id:1, title: "John Wick 4",release_date:"2024"},
+        {id:2, title: "Avengers: EndGame",release_date:"2020"},
         {id:3, title: "Hulk",release_date:"2024"},
-        {id:4, title: "Cap america",release_date:"2004"},
+        {id:4, title: "Captain America",release_date:"2004"},
         {id:5, title: "Thor",release_date:"2014"},
     ]
     const handleSearch =(e) => {
-        e.preventDefault()
         alert(searchQuery)
     }
     return (
@@ -26,7 +25,7 @@ function Home(){
              />
             <button type="submit" className="search-btn">Search</button>
         </form>
-        <div className="movie-grid">
+        <div className="movies-grid">
             {movie.map((movie) => (
                 <MovieCard movie={movie} key={movie.id} />
             ))}
